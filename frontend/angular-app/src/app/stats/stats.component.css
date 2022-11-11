@@ -1,0 +1,7 @@
+table, th, td {
+    border:1px solid whitesmoke;
+}
+#tabela1{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}

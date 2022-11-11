@@ -1,0 +1,45 @@
+.itemCard{
+    width: 70vw;
+    margin-left: 15vw;
+}
+#proizvod{
+    width: auto;
+    height: auto;
+    margin-top: 2vh;
+}
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+#button{
+    background-color: crimson;
+    color: whitesmoke;
+}
+#cena{
+    text-align: right;
+}
+#comment{
+    width: 40vw;
+    height: 60px;   
+    margin-left: 10vw;
+}
+#submitButton{
+    margin-left: 10vw;
+    width: 100px;
+    height: 50px;
+    background-color: goldenrod;
+}
+#textRate{
+    text-align: center;
+}
+#rating{
+    margin-left: 4vw;
+}
+.commentCard{
+    width: 70vw;
+    margin-left: 15vw;
+    margin-top: 2vh;
+}
+#starRating{
+    color: goldenrod;
+}

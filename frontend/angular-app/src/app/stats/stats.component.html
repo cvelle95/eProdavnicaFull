@@ -1,0 +1,115 @@
+<section *ngIf="loadPage">
+<div id="filter">
+
+    <form fxLayout="row" fxLayoutAlign='center center' fxLayoutGap='50px' #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+
+        <mat-form-field >
+            <mat-select placeholder="Choose Product" [(value)] = "selectedItem">
+                <mat-option *ngFor="let item of items" [value]="item.value">
+                    {{item.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field hintLabel=''>
+            <input type='number' ngModel matInput placeholder='Godina' name='godina' #nameInput='ngModel'>
+        </mat-form-field>
+
+
+        <button type='submit' mat-raised-button color='warn' [disabled]='f.invalid'>Get data</button>
+
+    </form>
+</div>
+
+    <div id="tabela1" fxLayout="row">
+        <table style="width:100%">
+            <tr>
+                <th>Mesec</th>
+                <th>Broj Porudzbina</th>
+                <th>Ukupna Prodata Kolicina</th>
+                <th>Ukupan Prihod Prodaje</th>
+            </tr>
+            <tr>
+                <td>Januar</td>
+                <td>{{stats[0].ukupnaKolicina}}</td>
+                <td>{{stats[0].brojPorudzbina}}</td>
+                <td>{{stats[0].ukupanPrihod | currency:'EUR'}}</td>
+            </tr>
+            <tr>
+                <td>Februar</td>
+                <td>{{stats[1].ukupnaKolicina}}</td>
+                <td>{{stats[1].brojPorudzbina}}</td>
+                <td>{{stats[1].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Mart</td>
+                <td>{{stats[2].ukupnaKolicina}}</td>
+                <td>{{stats[2].brojPorudzbina}}</td>
+                <td>{{stats[2].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>April</td>
+                <td>{{stats[3].ukupnaKolicina}}</td>
+                <td>{{stats[3].brojPorudzbina}}</td>
+                <td>{{stats[3].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Maj</td>
+                <td>{{stats[4].ukupnaKolicina}}</td>
+                <td>{{stats[4].brojPorudzbina}}</td>
+                <td>{{stats[4].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Jun</td>
+                <td>{{stats[5].ukupnaKolicina}}</td>
+                <td>{{stats[5].brojPorudzbina}}</td>
+                <td>{{stats[5].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Jul</td>
+                <td>{{stats[6].ukupnaKolicina}}</td>
+                <td>{{stats[6].brojPorudzbina}}</td>
+                <td>{{stats[6].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Avgust</td>
+                <td>{{stats[7].ukupnaKolicina}}</td>
+                <td>{{stats[7].brojPorudzbina}}</td>
+                <td>{{stats[7].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Septembar</td>
+                <td>{{stats[8].ukupnaKolicina}}</td>
+                <td>{{stats[8].brojPorudzbina}}</td>
+                <td>{{stats[8].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Oktobar</td>
+                <td>{{stats[9].ukupnaKolicina}}</td>
+                <td>{{stats[9].brojPorudzbina}}</td>
+                <td>{{stats[9].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Novembar</td>
+                <td>{{stats[10].ukupnaKolicina}}</td>
+                <td>{{stats[10].brojPorudzbina}}</td>
+                <td>{{stats[10].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+            <tr>
+                <td>Decembar</td>
+                <td>{{stats[11].ukupnaKolicina}}</td>
+                <td>{{stats[11].brojPorudzbina}}</td>
+                <td>{{stats[11].ukupanPrihod | currency:'EUR'}} </td>
+            </tr>
+        </table>
+
+    </div>
+    <div>
+        <app-footer></app-footer>
+    </div>
+</section>
+
+<section *ngIf="!loadPage">
+    <h1 style="text-align: center;">Nemate pristup funkciji</h1>
+    <a  routerLink='/login'><h3 style="text-align: center;">Login</h3>></a>
+</section>

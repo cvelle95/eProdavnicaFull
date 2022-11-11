@@ -1,0 +1,14 @@
+.content{
+    padding: 16px;
+    min-width: 99vw;
+    min-height: 97vh;
+}
+#orders{
+    margin-top: 2vw;
+
+}
+#button{
+    margin-left: 10vw;
+    background-color: crimson;
+    color: whitesmoke;
+}

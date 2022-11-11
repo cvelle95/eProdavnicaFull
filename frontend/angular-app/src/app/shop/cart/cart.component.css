@@ -1,0 +1,22 @@
+.content {
+    padding: 16px;
+    min-width: 99vw;
+    min-height: 97vh;
+}
+#orders{
+    margin-top: 2vw;
+
+}
+#buttonRemove{
+    margin-left: 10vw;
+    background-color: crimson;
+    color: whitesmoke;
+}
+#orderButton{
+    margin-top: 5vh;
+    background-color: greenyellow;
+    color: saddlebrown;
+}
+#kolicinapolje{
+    width: 50px;
+}

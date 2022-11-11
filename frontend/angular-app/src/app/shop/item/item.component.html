@@ -1,0 +1,68 @@
+<section id="proizvod" > 
+    <mat-card class="itemCard">
+        <mat-card-header>
+          <mat-card-title>{{selectedItem.naziv}}</mat-card-title>
+          <mat-card-subtitle *ngIf="selectedItem.kategorija_proizvoda_id==1">Laptop</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="selectedItem.kategorija_proizvoda_id==2">Desktop</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="selectedItem.kategorija_proizvoda_id==3">Mobile</mat-card-subtitle>
+        </mat-card-header>
+
+        <img id="slika" mat-card-image src="{{selectedItem.coverImage}}" alt="Photo of item">
+        <mat-card-content>
+          <p>
+            {{selectedItem.opis}}
+          </p>
+          <p id="cena"><b>{{selectedItem.cena}}eur</b></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button id="button" mat-button (click)='addToCart()'>Add to cart</button>
+        </mat-card-actions>
+      </mat-card>
+
+      <h3 id="textRate" *ngIf="!disabledRating"> Please rate our product!</h3>
+      
+      <!-- rating zvezde i komentar -->
+    <div id="rating" fxLayout='row' fxLayoutAlign='left' fxLayoutGap='15px' *ngIf="!disabledRating">
+      <button mat-icon-button id="starRating" *ngFor="let r of ratingArr; index as i" (click)='onStarClick(i)'>
+        <mat-icon>
+          {{ returnStar(i) }}
+        </mat-icon>
+      </button>
+
+      <form  #f='ngForm' (ngSubmit)="onSubmit(f.value)" *ngIf="!disabledRating">
+
+        <mat-form-field appearance="outline" id="comment">
+          <input type='text' ngModel matInput placeholder='Leave your comment' name='comment'  #commentInput='ngModel' [disabled]='disabledRating'>
+        </mat-form-field>
+
+        <button id="submitButton" type=submit mat-raised-button color='warn' [disabled]='disabledRating'>Submit</button>
+
+      </form>
+    </div>
+    <!-- ----------------- -->
+</section>
+
+<section>
+  <div fxLayout="row" fxLayoutGap="50px" *ngFor="let userComent of userComents">
+
+    <mat-card class="commentCard">
+      <mat-card-header>
+
+        <mat-card-title>
+          {{userComent.ocena}}<span class="material-icons" style="color: goldenrod;">grade</span>
+        </mat-card-title>
+
+        <mat-card-subtitle>{{userComent.ime}}</mat-card-subtitle>
+
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>
+          {{userComent.komentar}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</section>
+<app-footer></app-footer>

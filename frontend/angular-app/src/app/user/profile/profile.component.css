@@ -1,0 +1,12 @@
+
+form{
+    height: 90%;
+}
+mat-form-field{
+    width: 50%;
+}
+
+#loginPlease{
+    width: 99vw;
+    height: 99vh;
+}
